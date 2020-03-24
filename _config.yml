@@ -21,7 +21,9 @@
 title: Rigerta Demiri
 email: demiri.rigerta@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-baseurl: "https://github.com/rigerta/rigerta.github.io/" # the subpath of your site, e.g. /blog
+
+#baseurl: "https://github.com/rigerta/rigerta.github.io/" # the subpath of your site, e.g. /blog
+baseurl: ""
 
 twitter_username: 
 github_username:  
