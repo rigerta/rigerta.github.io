@@ -3,6 +3,6 @@ layout: page
 title: About
 ---
 
-<p class="message">
+<p>
   Hey there! This is the About me page.
 </p>
