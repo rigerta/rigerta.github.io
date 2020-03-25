@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Ha! Some information about me! If only I knew.
 
-### More Information
+### What is this about 
 
-A place to include any other types of information that you'd like to include about yourself.
+Hey there! This is the page where I am supposed to tell you some things about myself. I might actually do it, just not right now. 
+Nobody is looking at this page anyway, so it's kind of funny I am talking to myself. 
 
-### Contact me
+Dear self, be patient! 
 
-demiri.rigerta@gmail.com (mailto: demiri.rigerta@gmail.com)
+### You can easily contact me here:
+[demiri.rigerta@gmail.com](mailto: demiri.rigerta@gmail.com)
