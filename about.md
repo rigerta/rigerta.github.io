@@ -13,5 +13,3 @@ Nobody is looking at this page anyway, so it's kind of funny I am talking to mys
 
 Dear self, be patient! 
 
-### You can easily contact me here:
-[demiri.rigerta@gmail.com](mailto: demiri.rigerta@gmail.com)

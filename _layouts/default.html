@@ -8,14 +8,26 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+  
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+
+    <script>
+
+    function getWndowSize()
+    {
+        var windows_height=$(windows).height();
+        var current_height=windows_height-100; 
+        $("#wrapper-footer").css({'min-height' : current_height});
+    }
+
+    </script>
+
   </head>
 
-  <body>
+  <body onload="getWndowSize()">
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
@@ -38,14 +50,10 @@
     <div id="main" role="main" class="container">
       {{ content }}
     </div>
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
+ 
+    <footer class="footer">
+      {% include svg-icons.html %}
+    </footer>
 
     {% include analytics.html %}
   </body>
