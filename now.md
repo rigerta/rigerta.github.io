@@ -6,5 +6,5 @@ permalink: /now/
 
 What am I currently up to. Will be updated soon-ish.
 
-### Meanwhile, free to contact me here: s
+### Meanwhile, free to send me an email :)  
 [demiri.rigerta@gmail.com](mailto: demiri.rigerta@gmail.com)
