@@ -14,20 +14,22 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
 
-    <script>
 
+    <!-- 
+    -- trying to make the footer sticky, did not work, will find another solution
+    <script>  
     function getWndowSize()
     {
         var windows_height=$(windows).height();
         var current_height=windows_height-100; 
-        $("#wrapper-footer").css({'min-height' : current_height});
+        $("#footer").css({'min-height' : current_height});
     }
-
     </script>
-
+    -->
   </head>
 
-  <body onload="getWndowSize()">
+  <!-- <body onload="getWndowSize()"> -->
+  <body> 
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
@@ -51,9 +53,11 @@
       {{ content }}
     </div>
  
+    <!-- 
     <footer class="footer">
       {% include svg-icons.html %}
     </footer>
+    -->
 
     {% include analytics.html %}
   </body>
