@@ -1,6 +1,6 @@
 ---
 layout: post
-title: You're Up And Running!
+title: You're Up & Running!
 ---
 
 Am I though, am I??

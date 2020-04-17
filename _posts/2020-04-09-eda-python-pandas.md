@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EDA in Python with Pandas!
+title: Tweets EDA in Python!
 ---
 
 
