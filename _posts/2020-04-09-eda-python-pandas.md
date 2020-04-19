@@ -3,8 +3,7 @@ layout: post
 title: Tweets EDA in Python!
 ---
 
-
-Learning Python and coming from a SQL background, the first thing I wanted to be able to do was handling a dataset in Python the way I do using T-SQL.
+Having a SQL background while learning Python, the first thing I wanted to be able to do was handling a dataset in Python the way I do using T-SQL.
 Being comfortable and familiar with Python will take time, but I can start by finding parallels in the way both work with data and maybe feel like I am not stranded out in the wild.
  
 
@@ -24,11 +23,7 @@ Typical checks I usually do when I have to work with a dataset (or in my databas
 
 
 Let's load a dataset and try to do exactly these checks in Python using Pandas. 
-
-
-
-
-
+ 
 The next post in this series will be [Exploratory Data Analysis using PySpark and SparkSQL](). 
 Let me know if you would be interested in that, I'd be happy to put together a tutorial. 
 

@@ -127,6 +127,15 @@ img {
   font-style: italic;
   color: $gray;
   font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+.img-copyright {
+  font-style: italic;
+  color: $gray;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0.15em;
 }
 
 // Specify the color of the selection
