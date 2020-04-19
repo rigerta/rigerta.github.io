@@ -17,20 +17,29 @@ You need to know exactly what are you working on and how the data looks like and
 But first, let's get some insights from our dataset. Basic ones. Easy small-talk with the data.
 
 This is the point of my exercise: I'd like to be able to have a nice small talk with the data, get some basic info and move on with my life. 
-You know, especially now that there are no friends around, my hobby is talking to data. FML. I know. 
+You know, especially now that there are no friends around, my hobby is talking to data. ~~Things are getting weird, belive me, I know!~~ 
 
-Anyway, if you have never been good in small talk, this is your chance to learn, because as in everything in life: this is the only way to be able to develop an intuition about your data. Or have any friends, for that matter. Just look at how nice this has worked for me. 
+Anyway, if you have never been good in small talk, this is your chance to practice, because this is the only way to be able to develop an intuition about your data. 
+Or have any friends in real life, for that matter. Just look at how nice this has worked out for me. 
 
 So, back to the subject: 
 
-The most commonly used languages for exploratory data analysis seem to be R and Python.  
-Yes, I checked. Yes, by googling this. Yes, it is enough. 
-Just kidding, I have been in these circles for too long now, that is all I hear about: Python and R. Python OR R. Why Python? Why R? 
-Trust me, they are the most used languages to perform exploratory data analysis in. 
+The most commonly used languages for exploratory data analysis seem to be R and Python. Yes, I checked. Yes, by [googling](https://www.google.com/search?client=firefox-b-d&q=most+common+languages+to+perform+exploratory+data+analysis) it. 
 
-I personally have chosen to learn Python - I don't know why, I just felt like it, please don't ask me, this is not small talk with me, but with the data - however, I decided to first exercise myself in doing a similar task in what I am already comfortable in and that's T-SQL. 
+According to Google:  
 
-Now, T-SQL is not a language designed for this, the kind of analysis I would like to perform can be easily done in T-SQL as well, so I thought of giving this a try and then proceeding with other language/s. 
+>
+Exploratory Data Analysis In Python Vs R. Python and R programming are the two most widely used languages for data analysis by data scientists.
+Nov 5, 2019
+
+
+I personally have chosen to learn Python, however I decided to first perform this task in T-SQL, since this is part of my comfort zone. 
+The learning-new-things steps will come later. One has to start somewhere, right?
+
+Also, I have noticed there are people interested in doing this kind of analysis in T-SQL. 
+How do I know this? Glad you asked. Going back to Google, searching for ["exploratory data analysis with t-sql"](https://www.google.com/search?client=firefox-b-d&ei=yaecXtK3Eueo1fAP9aWakAo&q=exploratory+data+analysis+with+t-sql&oq=exploratory+data+analysis+with+t-sql&gs_lcp=CgZwc3ktYWIQAzoECAAQRzoECCEQClCdpAtYtKwLYLytC2gAcAp4AIABWogBmAOSAQE1mAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiSwN35nfXoAhVnVBUIHfWSBqIQ4dUDCAs&uact=5) there are more than 2 million results - which means, _some_ people are still interested to know.
+
+Now, T-SQL is not a language _designed_ for this, but the kind of analysis on the dataset of my choice can be easily done in T-SQL as well, so I thought of giving this a try and then proceeding with other language/s. 
 
 Please keep in mind that what I am trying to do is _basic_ exploratory data analysis, to gain some insights from the dataset I am working with. 
 
@@ -64,11 +73,15 @@ The objective in this competition is to develop a model that performs sentiment 
 <script src="https://gist.github.com/rigerta/99e4cad54dc3eed5f969c738c4b24286.js"></script>
 
 
-<h3> Step 3: Let the fun begin! </h3> 
 
 <div class = "center" markdown="1">
+
 ![Start Analysing](http://127.0.0.1:8887/search.png "Start analysing!")
+
 </div>
+
+<h3> Step 3: Let the fun begin! </h3> 
+
 
 Let's first see how many tweets we have in the dataset and how does the data in the first five rows look like:
 
@@ -184,26 +197,24 @@ We have performed a basic exploratory data analysis on the tweets dataset and no
 
 If you decide to give this competition a try on Kaggle, have fun and good luck! 
 
-I will meanwhile perform the same analysis on the same dataset on Python as well, so if you're interested, keep an eye for the next post in this series. 
+I will meanwhile perform the same analysis on the same dataset on Python as well, so if you're interested, keep an eye for the next post in this series.
 
-
-
-
-
-
-
-
+<br/>
 
 _One last note_: 
 
 All the illustrations on this post are from [UnDraw](https://undraw.co/illustrations). 
-I love them and they are easily customizable and free to use. 
+I love them and they are easily customizable and _free_ to use. 
 
 _A big shout out to the developers and designers, they are doing a great job!_
 
+
+
 <div class = "center" markdown="1">
-![Super Thank You!](http://127.0.0.1:8887/undraw_super_thanks.png "Super Thank You!")
+![Super Thank You!](http://127.0.0.1:8887/happy.png "Super Thank You!")
 </div>
+
+
 
 Thank youhu for reading!  
 
