@@ -1,6 +1,6 @@
 
 .highlight {
-  background-color: #A3DAFF;
+  background-color: rgb(0, 22, 37);
   padding: 7px 7px 7px 10px;
   border: 1px solid #A3DAFF;
   -moz-box-shadow: 3px 3px #A3DAFF;
@@ -28,13 +28,13 @@ code {
 .highlight .c1 { color: #586E75 } /* Comment.Single */
 .highlight .cs { color: #859900 } /* Comment.Special */
 .highlight .gd { color: #2AA198 } /* Generic.Deleted */
-.highlight .ge { color: #93A1A1; font-style: italic } /* Generic.Emph */
+.highlight .ge { color: #A3DAFF; font-style: italic } /* Generic.Emph */
 .highlight .gr { color: #DC322F } /* Generic.Error */
 .highlight .gh { color: #CB4B16 } /* Generic.Heading */
 .highlight .gi { color: #859900 } /* Generic.Inserted */
 .highlight .go { color: #93A1A1 } /* Generic.Output */
 .highlight .gp { color: #93A1A1 } /* Generic.Prompt */
-.highlight .gs { color: #93A1A1; font-weight: bold } /* Generic.Strong */
+.highlight .gs { color: rgb(67, 169, 233); font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #CB4B16 } /* Generic.Subheading */
 .highlight .gt { color: #93A1A1 } /* Generic.Traceback */
 .highlight .kc { color: #CB4B16 } /* Keyword.Constant */

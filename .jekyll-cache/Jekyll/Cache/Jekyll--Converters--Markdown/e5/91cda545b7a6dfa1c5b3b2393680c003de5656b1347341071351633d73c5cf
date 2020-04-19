@@ -1,0 +1,200 @@
+I""&<p>Welcome to my very first blog post!</p>
+
+<p>This is going to be a blog on the things that I am curious and passionate about. 
+The main goal is for it to be a technical one, focused on the things I either already know and would like to document somewhere, or new things I am learning at the moment.</p>
+
+<p>I’ve recently become very interested in Machine and Deep Learning and as you quickly learn, once into the topic, the first step in solving any kind of problem is analysing the data you have to work with and getting familiar with it. And by that I mean REALLY familiar.</p>
+
+<p>You need to know exactly what are you working on and how the data looks like and what is missing and why is it missing and what can you replace it with and oh-so-many things to worry about.</p>
+
+<p>But first, let’s get some insights from our dataset. Basic ones. Easy small-talk with the data.</p>
+
+<p>This is the point of my exercise: I’d like to be able to have a nice small talk with the data, get some basic info and move on with my life. 
+You know, especially now that there are no friends around, my hobby is talking to data. FML. I know.</p>
+
+<p>Anyway, if you have never been good in small talk, this is your chance to learn, because as in everything in life: this is the only way to be able to develop an intuition about your data. Or have any friends, for that matter. Just look at how nice this has worked for me.</p>
+
+<p>So, back to the subject:</p>
+
+<p>The most commonly used languages for exploratory data analysis seem to be R and Python.<br />
+Yes, I checked. Yes, by googling this. Yes, it is enough. 
+Just kidding, I have been in these circles for too long now, that is all I hear about: Python and R. Python OR R. Why Python? Why R? 
+Trust me, they are the most used languages to perform exploratory data analysis in.</p>
+
+<p>I personally have chosen to learn Python - I don’t know why, I just felt like it, please don’t ask me, this is not small talk with me, but with the data - however, I decided to first exercise myself in doing a similar task in what I am already comfortable in and that’s T-SQL.</p>
+
+<p>Now, T-SQL is not a language designed for this, the kind of analysis I would like to perform can be easily done in T-SQL as well, so I thought of giving this a try and then proceeding with other language/s.</p>
+
+<p>Please keep in mind that what I am trying to do is <em>basic</em> exploratory data analysis, to gain some insights from the dataset I am working with.</p>
+
+<p>This will be the first article in a series of 3, since I plan to do the same in Python with Pandas and in PySpark with SparkSQL - because..well, it’s quarantine time and I cannot use my usual excuse to procrastinate: “I don’t have time, I will do it later”. Later apparently caught up with me and it is standing right here, looking over my shoulder. So yes. We are doing this!</p>
+
+<h3> Alright, let's jump right into it. 
+
+
+The database I will load the dataset into will be a SQL Server 2019 (Developer Edition) database.
+
+The dataset I will be using for this article is the one from Kaggle's <a href="https://www.kaggle.com/c/tweet-sentiment-extraction/overview" target="_blank">Tweet Sentiment Extraction Competition</a>.
+
+
+
+The train dataset consists of a `tweet_id`, the `tweet_text`, a `selected_text` from the tweet text and a `sentiment` attached to it. 
+
+The end result for the competition is to develop a model that performs sentiment analysis on the test dataset so that when provided with a certain selected text from a tweet, it can categorize it's sentiment correctly into either `neutral`, `negative` or `positive`. 
+
+ 
+## 1. Download the `train.csv` dataset file from <a href="https://www.kaggle.com/c/tweet-sentiment-extraction/data" target="_blank">Kaggle</a>
+
+![Download Kaggle's Tweets Dataset](http://127.0.0.1:8887/undraw_download.png "Download Kaggle's Tweets Dataset")
+
+## 2. Load the data into a database* using the <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15" target="_blank">BULK INSERT</a> command
+
+<script src="https://gist.github.com/rigerta/99e4cad54dc3eed5f969c738c4b24286.js"></script>
+
+## 3. Start analysing. 
+
+![Start Analysing](http://127.0.0.1:8887/undraw_search.png "Start analysing!")
+
+Let's first see how many tweets we have in the dataset and how does the data in the first five rows look like:
+
+<script src="https://gist.github.com/rigerta/f29b0033d8c02093b2eb653918332c0f.js"></script>
+
+We have 27.481 tweets in total, we have the complete tweet in the tweet_text column and the selected_text seems to be a subset of the tweet itself - at first sight.
+
+![Ininital checks](http://127.0.0.1:8887/initial_check.png "Initial Results!")
+
+We also see that our columns are all text columns (type `nvarchar`) and they are all `nullable`, which means we might have null values in any of those columns. 
+
+Let's see if we do have any: 
+
+<script src="https://gist.github.com/rigerta/002b2dd21972733fbb075fa21566f861.js"></script>
+
+It turns out we only have one row with missing tweet_text and selected_text which is classified as a neutral tweet. 
+
+![Missing values](http://127.0.0.1:8887/04.png "Missing values!")
+
+
+Let's do some further checks, as to find out what are the distinct values for our sentiment column accross the whole dataset and check how many tweets we have per sentiment,
+using the following two queries: 
+
+<script src="https://gist.github.com/rigerta/1a22477cfa9dead1bdc4049ea717d6ce.js"></script>
+![Further checks](http://127.0.0.1:8887/further_checks.png "Further checks!")
+
+So we have three distinct values for the sentiment column and luckily, no tweets that have a missing value for it.
+
+We also notice we have a similar distribution for positive and negative tweets, while we have a much larger number of neutral tweets. 
+
+These are insights we get from simple quick checks on our data that will prove to be very useful in the next steps of building an accurate machine learning model for the specific competition, but this is something we do not need to think about now. We have so much to learn before we get there.
+
+
+Next, we will find out if we have the same selected_text for more than one tweet and if so, we will take a look at those tweets, to see what do they have in common.
+
+These steps are done to help building an intuition and getting to know your data. 
+It is very important to know what you are working with, so that you can take better decisions. 
+
+<script src="https://gist.github.com/rigerta/5479aa85a06bbffc3002a2247fb20008.js"></script>
+
+![Same selected text per tweet](http://127.0.0.1:8887/05.png "Same selected text per tweet!")
+
+As we see, there are 303 tweets in the dataset having the same selected text - "happy" and 262 sharing the selected text "good" and so on. 
+
+Next step is finding out what is the distribution of length of tweets per sentiment. 
+
+We can find out how long our tweets are, at least min and max lengths by using the following query: 
+
+<script src="https://gist.github.com/rigerta/d83f976d4d43622405369dfed18af7d0.js"></script>
+
+And we find out that our tweets range from 3 characters long to 159 characters long. 
+
+![MinMax Length](http://127.0.0.1:8887/06.png "MinMax Tweet Length!")
+
+
+
+That means that finding the distribution of tweet length per sentiment, we could come up with groups like: 
+* (0-5) characters
+* (5-50) characters 
+* (50-100) characters
+* (100-150) characters and
+* (&gt; 150) characters 
+
+We can use the following query and find out how long are most of the tweets per each sentiment we have in our dataset: 
+
+<script src="https://gist.github.com/rigerta/1619284915a64fd7a90696bb336d39a0.js"></script>
+
+The results seem interesting: 
+
+![Tweet Length Distribution Per Sentiment](http://127.0.0.1:8887/07.png "Tweet Length Distribution Per Sentiment!")
+
+  Most of the positive and negative tweets are between 50-100 characters long  
+
+  Most of the neutral tweets are shorter - between 5-50 characters
+
+  There's a single tweet longer than 150 characters and that it is a neutral one.
+
+
+We can perform the same analysis on the selected_text and see what we find. 
+The query is the same, just this time we query on the selected_text instead of the tweet text. 
+
+<script src="https://gist.github.com/rigerta/6337131100317386100b7b00015d38d1.js"></script>
+
+&gt; For every sentiment, whether negative, positive or neutral, the majority of the selected texts are between 0-50 characters long.
+
+![Selected Text Length Distribution Per Sentiment](http://127.0.0.1:8887/08.png "Selected Text Length Distribution Per Sentiment!")
+
+
+## A quick recap:
+
+What do we know about the data in the train.csv dataset? 
+
+&gt;
+There are in total 27.481 tweets
+&gt;
+There is only one row with missing data
+&gt;
+We have no missing sentiment label for any of the train dataset rows
+&gt;
+The dataset has a similar number of positive and negative tweets, but almost double of that number in neutral tweets
+&gt;
+The tweet texts are between 0-159 characters long
+&gt;
+Most of the positive and negative tweets are less than 100 characters long 
+&gt;
+Most of the neutral tweets are less than 50 chars long 
+&gt;
+Most of the selected texts (regardless of the sentiment) are less than 50 characters long
+ 
+
+
+
+We have performed a basic exploratory data analysis on the tweets dataset and now we are ready for the next steps, which would be post-processing and building a machine learning model to fit our training set and accurately classify the test set tweets selected text sentiment! 
+
+If you decide to give it a try on Kaggle, have fun! 
+
+I will perform the same analysis on Python as well, keep an eye for the next post in this series. 
+
+Thanks for reading! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</h3>
+:ET

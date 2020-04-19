@@ -88,22 +88,41 @@ a {
 ul, ol {
   margin: 14px 0;
   padding-left: 30px;
+  letter-spacing: 0.03em;
+  font-family: $georgia;
+  font-size: 1.2rem;
+  line-height: 1.6em;
 }
 
 ul {
   list-style-type: disc;
+  letter-spacing: 0.03em;
+  font-family: $georgia;
+  font-size: 1.2rem;
+  line-height: 1.6em;
 }
 
 ol {
   list-style-type: decimal;
+  font-family: $georgia;
+  letter-spacing: 0.03em;
+  font-size: 1.2rem;
+  line-height: 1.6em;
 }
 
 ol ul, ul ol, ul ul, ol ol {
   margin: 0;
+  font-family: $georgia;
+  letter-spacing: 0.03em;
+  font-size: 1.2rem;
+  line-height: 1.6em;
 }
 
 ul ul, ol ul {
   list-style-type: circle;
+  letter-spacing: 0.03em;
+  font-size: 1.2rem;
+  line-height: 1.6em;
 }
 
 em, i {
@@ -123,6 +142,13 @@ img {
   max-width: none;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
 .date {
   font-style: italic;
   color: $gray;
@@ -130,11 +156,11 @@ img {
   letter-spacing: 0.15em;
 }
 
-.img-copyright {
+.copyright {
   font-style: italic;
   color: $gray;
   font-size: 11px;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.15em;
 }
 

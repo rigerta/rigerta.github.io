@@ -6,8 +6,7 @@
 name: Rigerta Demiri
 
 # Short bio or description (displayed in the header)
-description: Database Developer
-#Database Developer with a passion for ML and AI
+description: 
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 #avatar: https://raw.githubusercontent.com/rigerta/rigerta.github.io/master/images/logo.png
@@ -77,7 +76,7 @@ sass:
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-
+  
 # Exclude these files from your production _site
 exclude:
   - Gemfile

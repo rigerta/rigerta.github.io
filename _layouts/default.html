@@ -14,7 +14,6 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
 
-
     <!-- 
     -- trying to make the footer sticky, did not work, will find another solution
     <script>  
@@ -30,6 +29,17 @@
 
   <!-- <body onload="getWndowSize()"> -->
   <body> 
+
+   <!-- This is so cool and it is from here: https://github.com/vfeskov/vanilla-back-to-top/ LOVE IT!-->
+   <!-- NOTE RD: remember to change the URL to the local file, to not depend on the unpkg website once published -->
+   
+   <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>    
+   <script>addBackToTop({
+      diameter: 56,
+      backgroundColor: 'rgb(255, 82, 82)',
+      textColor: '#fff'
+    })</script>
+
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">

@@ -1,0 +1,157 @@
+I"�$<p>Welcome to my very first blog post!</p>
+
+<p>This is going to be a blog on the things that I am curious and passionate about. 
+The main goal is for it to be a technical one, focused on the things I either already know and would like to document somewhere, or new things I am learning at the moment.</p>
+
+<p>I’ve recently become very interested in Machine Learning and Deep Learning and the first step in solving any problem is analysing the data you have to work with and getting familiar with it.</p>
+
+<p>This is the only way to be able to develop an intuition about your data.</p>
+
+<p>The most commonly used languages for exploratory data analysis seem to be R and Python.</p>
+
+<p>I chose to learn Python, but I wanted to start with what I am most comfortable with and that is T-SQL.</p>
+
+<p>Now, T-SQL is not a language designed for this, but I am comfortable in it and I know that the kind of analysis I would like to do can be easily done in T-SQL as well, so I thought of giving this a try and then proceeding with other languages.</p>
+
+<p>Please keep in mind that what I am trying to do is a basic exploratory data analysis, to gain some insights from the dataset I am working with.</p>
+
+<p>This will be the first article in a series of 3, since I plan to do the same in Python with Pandas and in PySpark with SparkSQL - because..well, it’s quarantine time and I cannot use my usual excuse to procrastinate: “I don’t have time, I will do it later”. Later apparently caught up with me and it is standing right here, looking over my shoulder. So yes. We are doing this!</p>
+
+<p>Alright, let’s jump right into it.</p>
+
+<p>The dataset I will be using for this article is the one from Kaggle’s <a href="https://www.kaggle.com/c/tweet-sentiment-extraction/overview" target="_blank">Tweet Sentiment Extraction Competition</a>.</p>
+
+<p>The train dataset consists of a <code class="highlighter-rouge">tweet_id</code>, the <code class="highlighter-rouge">tweet_text</code>, a <code class="highlighter-rouge">selected_text</code> from the tweet text and a <code class="highlighter-rouge">sentiment</code> attached to it.</p>
+
+<p>The end result for the competition is to develop a model that performs sentiment analysis on the test dataset so that when provided with a certain selected text from a tweet, it can categorize it’s sentiment correctly into either <code class="highlighter-rouge">neutral</code>, <code class="highlighter-rouge">negative</code> or <code class="highlighter-rouge">positive</code>.</p>
+
+<h2 id="1-download-the-traincsv-dataset-file-from-kaggle">1. Download the <code class="highlighter-rouge">train.csv</code> dataset file from <a href="https://www.kaggle.com/c/tweet-sentiment-extraction/data" target="_blank">Kaggle</a></h2>
+
+<p><img src="http://127.0.0.1:8887/undraw_download.png" alt="Download Kaggle's Tweets Dataset" title="Download Kaggle's Tweets Dataset" /></p>
+
+<h2 id="2-load-the-data-into-a-database-using-the-bulk-insert-command">2. Load the data into a database* using the <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15" target="_blank">BULK INSERT</a> command</h2>
+
+<script src="https://gist.github.com/rigerta/99e4cad54dc3eed5f969c738c4b24286.js"></script>
+
+<h2 id="3-start-analysing">3. Start analysing.</h2>
+
+<p><img src="http://127.0.0.1:8887/undraw_search.png" alt="Start Analysing" title="Start analysing!" /></p>
+
+<p>Let’s first see how many tweets we have in the dataset and how does the data in the first five rows look like:</p>
+
+<script src="https://gist.github.com/rigerta/f29b0033d8c02093b2eb653918332c0f.js"></script>
+
+<p>We have 27.481 tweets in total, we have the complete tweet in the tweet_text column and the selected_text seems to be a subset of the tweet itself - at first sight.</p>
+
+<p><img src="http://127.0.0.1:8887/initial_check.png" alt="Ininital checks" title="Initial Results!" /></p>
+
+<p>We also see that our columns are all text columns (type <code class="highlighter-rouge">nvarchar</code>) and they are all <code class="highlighter-rouge">nullable</code>, which means we might have null values in any of those columns.</p>
+
+<p>Let’s see if we do have any:</p>
+
+<script src="https://gist.github.com/rigerta/002b2dd21972733fbb075fa21566f861.js"></script>
+
+<p>It turns out we only have one row with missing tweet_text and selected_text which is classified as a neutral tweet.</p>
+
+<p><img src="http://127.0.0.1:8887/04.png" alt="Missing values" title="Missing values!" /></p>
+
+<p>Let’s do some further checks, as to find out what are the distinct values for our sentiment column accross the whole dataset and check how many tweets we have per sentiment,
+using the following two queries:</p>
+
+<script src="https://gist.github.com/rigerta/1a22477cfa9dead1bdc4049ea717d6ce.js"></script>
+
+<p><img src="http://127.0.0.1:8887/further_checks.png" alt="Further checks" title="Further checks!" /></p>
+
+<p>So we have three distinct values for the sentiment column and luckily, no tweets that have a missing value for it.</p>
+
+<p>We also notice we have a similar distribution for positive and negative tweets, while we have a much larger number of neutral tweets.</p>
+
+<p>These are insights we get from simple quick checks on our data that will prove to be very useful later on, when we build a model to analyse the tweets.</p>
+
+<p>Next, we will find out if we have the same selected_text for more than one tweet and if so, we will take a look at those tweets, to see what do they have in common.</p>
+
+<p>These steps are done to help building an intuition and getting to know your data. 
+It is very important to know what you are working with, so that you can take better decisions.</p>
+
+<script src="https://gist.github.com/rigerta/5479aa85a06bbffc3002a2247fb20008.js"></script>
+
+<p><img src="http://127.0.0.1:8887/05.png" alt="Same selected text per tweet" title="Same selected text per tweet!" /></p>
+
+<p>As we see, there are 303 tweets in the dataset having the same selected text - “happy” and 262 sharing the selected text “good” and so on.</p>
+
+<p>Next step is finding out what is the distribution of length of tweets per sentiment.</p>
+
+<p>We can find out how long our tweets are, at least min and max lengths by using the following query:</p>
+
+<script src="https://gist.github.com/rigerta/d83f976d4d43622405369dfed18af7d0.js"></script>
+
+<p>And we find out that our tweets range from 3 characters long to 159 characters long.</p>
+
+<p><img src="http://127.0.0.1:8887/06.png" alt="MinMax Length" title="MinMax Tweet Length!" /></p>
+
+<p>That means that finding the distribution of tweet length per sentiment, we could come up with groups like:</p>
+<ul>
+  <li>(0-5) characters</li>
+  <li>(5-50) characters</li>
+  <li>(50-100) characters</li>
+  <li>(100-150) characters and</li>
+  <li>(&gt; 150) characters</li>
+</ul>
+
+<p>We can use the following query and find out how long are most of the tweets per each sentiment we have in our dataset:</p>
+
+<script src="https://gist.github.com/rigerta/1619284915a64fd7a90696bb336d39a0.js"></script>
+
+<p>The results seem interesting:</p>
+
+<p><img src="http://127.0.0.1:8887/07.png" alt="Tweet Length Distribution Per Sentiment" title="Tweet Length Distribution Per Sentiment!" /></p>
+
+<p>Most of the positive and negative tweets are between 50-100 characters long</p>
+
+<p>Most of the neutral tweets are shorter - between 5-50 characters</p>
+
+<p>There’s a single tweet longer than 150 characters and that it is a neutral one.</p>
+
+<p>We can perform the same analysis on the selected_text and see what we find. 
+The query is the same, just this time we query on the selected_text instead of the tweet text.</p>
+
+<script src="https://gist.github.com/rigerta/6337131100317386100b7b00015d38d1.js"></script>
+
+<blockquote>
+  <p>For every sentiment, whether negative, positive or neutral, the majority of the selected texts are between 0-50 characters long.</p>
+</blockquote>
+
+<p><img src="http://127.0.0.1:8887/08.png" alt="Selected Text Length Distribution Per Sentiment" title="Selected Text Length Distribution Per Sentiment!" /></p>
+
+<h2 id="a-quick-recap">A quick recap:</h2>
+
+<p>What do we know about the data in the train.csv dataset?</p>
+
+<blockquote>
+
+  <p>There are in total 27.481 tweets</p>
+
+  <p>There is only one row with missing data</p>
+
+  <p>We have no missing sentiment label for any of the train dataset rows</p>
+
+  <p>The dataset has a similar number of positive and negative tweets, but almost double of that number in neutral tweets</p>
+
+  <p>The tweet texts are between 0-159 characters long</p>
+
+  <p>Most of the positive and negative tweets are less than 100 characters long</p>
+
+  <p>Most of the neutral tweets are less than 50 chars long</p>
+
+  <p>Most of the selected texts (regardless of the sentiment) are less than 50 characters long</p>
+</blockquote>
+
+<p>We have performed a basic exploratory data analysis on the tweets dataset and now we are ready for the next steps, which would be post-processing and building a machine learning model to fit our training set and accurately classify the test set tweets selected text sentiment!</p>
+
+<p>If you decide to give it a try on Kaggle, have fun!</p>
+
+<p>I will perform the same analysis on Python as well, keep an eye for the next post in this series.</p>
+
+<p>Thanks for reading!</p>
+
+:ET
