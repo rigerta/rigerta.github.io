@@ -98,7 +98,7 @@ Let's first see how many tweets we have in the dataset and how does the data in 
 
 We have *27.481* tweets in total, we have the full tweet in the `text` column and the `selected_text` seems to be a subset of the tweet itself - at least at first sight.
 
-![Ininital checks](https://graw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/initial_check.png "Initial Results!")
+![Ininital checks](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/initial_check.png "Initial Results!")
 
 We also see that our columns are all text columns (type `nvarchar`) and they are all `nullable`, which means we _might_ have null values in any of those columns. 
 
