@@ -1,7 +1,8 @@
 
 -- First we need to create the database that we will use to load our data into
---CREATE DATABASE TwitterData
---GO
+CREATE DATABASE TwitterData
+GO
+
 
 -- Use the newly created database
 USE TwitterData
@@ -13,7 +14,7 @@ CREATE TABLE Tweets (text_id nvarchar(50), text nvarchar(500), selected_text nva
 
 
 -- Load the train data from the CSV dataset file into our database
--- An alternative way of doing this would be using the functionality Import Flat File in the Tasks menu
+-- An alternative way of doing this would be using the Import Flat File functionality in the Tasks menu when right-clicking the database you just created
 
 BULK INSERT Tweets
     FROM 'C:\GIT\Blog\_datasets\twitter\train.csv'
