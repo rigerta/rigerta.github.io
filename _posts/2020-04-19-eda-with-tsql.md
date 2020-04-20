@@ -47,7 +47,7 @@ The learning-new-things steps will come a tiny bit later. One has to start somew
 
 
 Also, I have noticed there are people interested in doing this kind of analysis in T-SQL. 
-How do I know this? Glad you asked. Going back to Google, searching for ["exploratory data analysis with t-sql"](https://www.google.com/search?client=firefox-b-d&ei=yaecXtK3Eueo1fAP9aWakAo&q=exploratory+data+analysis+with+t-sql&oq=exploratory+data+analysis+with+t-sql&gs_lcp=CgZwc3ktYWIQAzoECAAQRzoECCEQClCdpAtYtKwLYLytC2gAcAp4AIABWogBmAOSAQE1mAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiSwN35nfXoAhVnVBUIHfWSBqIQ4dUDCAs&uact=5) there are more than 2 million results - which means, _some_ people are still interested to read about this.
+How do I know this? Glad you asked. Going back to Google, searching for ["exploratory data analysis with t-sql"](https://www.google.com/search?client=firefox-b-d&ei=yaecXtK3Eueo1fAP9aWakAo&q=exploratory+data+analysis+with+t-sql&oq=exploratory+data+analysis+with+t-sql&gs_lcp=CgZwc3ktYWIQAzoECAAQRzoECCEQClCdpAtYtKwLYLytC2gAcAp4AIABWogBmAOSAQE1mAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiSwN35nfXoAhVnVBUIHfWSBqIQ4dUDCAs&uact=5) there are more than 2 million results - which means, _some_ people are still interested in reading about this.
 
 Yes - it also means _there are already more than 2 million results on the subject, why are you adding another one, Rigerta?_ but please let's not go there, because honestly, I am also somewhat still wondering. 
 
