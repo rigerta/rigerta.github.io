@@ -3,6 +3,7 @@
 CREATE DATABASE TwitterData
 GO
 
+
 -- Use the newly created database
 USE TwitterData
 GO

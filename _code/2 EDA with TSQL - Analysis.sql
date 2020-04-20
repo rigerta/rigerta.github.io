@@ -13,18 +13,20 @@ GO
 select count(1) as total_tweets
 from dbo.Tweets 
 
--- Let's check the data types for each column
 
+-- Let's check the data types for each column
 select cols.name as column_name, tp.name as column_type, cols.max_length, cols.is_nullable
 from sys.tables t 
 		 join sys.columns cols on t.object_id = cols.object_id
 		 join sys.types tp on tp.system_type_id = cols.system_type_id and tp.user_type_id = cols.user_type_id
 where t.name = 'Tweets'
 
+
 -- Let's see what our tweets actually look like
 select top 5 *
 from dbo.Tweets
 order by text_id
+
 
 
 --- Check if we have any columns with missing (null) values: 
@@ -76,7 +78,6 @@ select min(tweet_length) min_length, max(tweet_length) max_length
 from cte_length
 
 
-
 -- The distribution of length of tweets per sentiment
 ;with cte_length as 
 (
@@ -111,11 +112,7 @@ pivot  (sum(t.nr_tweets_length) for length_group in ([(0-5)], [(5-50)], [(50-100
 
  
 
-  
-
 -- Same analysis, but this time for the selected_text: 
-
- 
 -- Find min and max values of length per selected_text, per sentiment: 
 ;with cte_length as 
 (
@@ -158,5 +155,27 @@ from
 	group by sentiment, length_group
 ) t
 pivot  (sum(t.nr_selected_text_chars) for length_group in ([(0-5)], [(5-50)], [(50-100)], [(100-150)], [(>150)])) as p
+=======
+-- Let's check the distribution of length of tweets per sentiment: 
+;with cte_length_distribution as 
+(
+	select text, len(text) tweet_length, sentiment
+	from dbo.Tweets 
+)
+select sentiment, min(tweet_length) min_length, max(tweet_length) max_length
+from cte_length_distribution
+group by sentiment
+order by sentiment 
+
+-- Let's check the distribution of tweets by length => most of the tweets are less than 90 chars long
+;with cte_length_distribution as 
+(
+	select text, len(text) tweet_length, sentiment
+	from dbo.Tweets 
+)
+select tweet_length, count(text) tweet_distribution_by_length
+from cte_length_distribution
+group by tweet_length
+order by tweet_length, tweet_distribution_by_length desc  
 
  
