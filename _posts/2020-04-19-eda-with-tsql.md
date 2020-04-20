@@ -67,7 +67,7 @@ I will load the dataset into a _SQL Server 2019 (Developer Edition)_ database an
 
 The train dataset consists of:
 * a `tweet_id`
-* the `tweet_text`
+* the tweet `text`
 * a `selected_text` from the tweet text and 
 * a `sentiment` attached to it
 
@@ -84,8 +84,9 @@ The objective in this competition is to develop a model that performs sentiment 
 <h3> Step 2: Load the data into the database using the <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15" target="_blank">BULK INSERT</a> command </h3> 
 
 <script src="https://gist.github.com/rigerta/99e4cad54dc3eed5f969c738c4b24286.js"></script>
+
  
-![Start Analysing](https://github.com/rigerta/rigerta.github.io/tree/dev/images/visual_data.png "Start analysing!")
+![Start Analysing](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/visual_data.png "Start analysing!")
  
 
 <h3> Step 3: Let the fun begin! </h3> 
