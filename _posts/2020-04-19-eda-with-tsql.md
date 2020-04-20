@@ -51,7 +51,7 @@ How do I know this? Glad you asked. Going back to Google, searching for ["explor
 
 Yes - it also means _there are already more than 2 million results on the subject, why are you adding another one, Rigerta?_, but please let's not go there, because honestly, I am also somewhat still wondering. 
 
-However, articles like [Writing a Technical Blog: Why to do it and what to write about](https://littlekendra.com/2011/01/13/onblogging/) from Kendra Little ([t](https://twitter.com/Kendra_Little), [b](https://littlekendra.com/)) and [this](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045) by Rachel Thomas ([t](https://twitter.com/math_rachel)) and so many more on the subject, made me think I could and maybe _should_ just do it. So here we are.   
+However, articles like [Writing a Technical Blog: Why to do it and what to write about](https://littlekendra.com/2011/01/13/onblogging/) from Kendra Little ([t](https://twitter.com/Kendra_Little), [b](https://littlekendra.com/)) and [Why you (yes, you) should blog](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045) by Rachel Thomas ([t](https://twitter.com/math_rachel)) and so many more on the subject, made me think I could and maybe _should_ just do it. So here we are.   
 
 Now, coming back to the main subject, T-SQL is not a language _designed_ for exploratory data analysis, but the kind of analysis I have in mind can be easily done in T-SQL as well, so I thought of giving this a try and then proceeding with other language/s. 
 
