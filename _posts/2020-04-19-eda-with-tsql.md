@@ -31,7 +31,7 @@ Or have any friends in real life, for that matter. _Just look at how nice this h
 
 So, back to the subject: 
 
-The most commonly used languages for exploratory data analysis seem to be R and Python. Yes, I checked. Yes, by [googling](https://www.google.com/search?client=firefox-b-d&q=most+common+languages+to+perform+exploratory+data+analysis) it. 
+The most commonly used languages for exploratory data analysis seem to be R and Python. Yes, I checked. Yes, by [Googling](https://www.google.com/search?client=firefox-b-d&q=most+common+languages+to+perform+exploratory+data+analysis) it. 
 
 According to Google:  
 
