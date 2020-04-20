@@ -1,4 +1,6 @@
-_site
+_site/
+.sass-cache/
+.jekyll-cache/
 .DS_Store
 .jekyll
 .jekyll-metadata
@@ -7,4 +9,6 @@ _site
 Gemfile
 Gemfile.lock
 node_modules
-package.json
+package.json#
+
+
