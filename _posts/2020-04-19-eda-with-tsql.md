@@ -82,7 +82,7 @@ The objective in this competition is to develop a model that performs sentiment 
 
 <h3> Step 2: Load the data into the database using the <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15" target="_blank">BULK INSERT</a> command </h3> 
 
-<script src="https://gist.github.com/rigerta/99e4cad54dc3eed5f969c738c4b24286.js"></script>
+<script src="https://gist.github.com/rigerta/99e4cad54dc3eed5f969c738c4b24286"></script>
 
 
 
