@@ -159,7 +159,7 @@ We can use the following query and find out how long are most of the tweets per 
 
 The results seem interesting: 
 
-![Tweet Length Distribution Per Sentiment](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/07.png "Tweet Length Distribution Per Sentiment!")
+![Tweet Length Distribution Per Sentiment](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/07.PNG "Tweet Length Distribution Per Sentiment!")
 
   Most of the positive and negative tweets are between 50-100 characters long  
 
