@@ -50,7 +50,7 @@ How do I know this? Glad you asked. Going back to Google, searching for ["explor
 
 Yes - it also means _there are already more than 2 million results on the subject, why are you adding another one, Rigerta?_ but please let's not go there, because honestly, I am also somewhat still wondering. 
 
-However, articles like [Writing a Technical Blog: Why to do it and what to write about](https://littlekendra.com/2011/01/13/onblogging/) from Kendra Little ([t](https://twitter.com/Kendra_Little), [b](https://littlekendra.com/)) and [this](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045) by Rachel Thomas ([t](https://twitter.com/math_rachel)) and [this one]() made me think I could and maybe _should_ just do it. So here we are.   
+However, articles like [Writing a Technical Blog: Why to do it and what to write about](https://littlekendra.com/2011/01/13/onblogging/) from Kendra Little ([t](https://twitter.com/Kendra_Little), [b](https://littlekendra.com/)) and [this](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045) by Rachel Thomas ([t](https://twitter.com/math_rachel)) and so many more on the subject, made me think I could and maybe _should_ just do it. So here we are.   
 
 Now, coming back to the main subject, T-SQL is not a language _designed_ for exploratory data analysis, but the kind of analysis I have in mind can be easily done in T-SQL as well, so I thought of giving this a try and then proceeding with other language/s. 
 
@@ -77,7 +77,7 @@ The objective in this competition is to develop a model that performs sentiment 
 <h3> Step 1. Download the train.csv dataset file from <a href="https://www.kaggle.com/c/tweet-sentiment-extraction/data" target="_blank">Kaggle</a> </h3> 
 
 <div class = "center" markdown="1">
-![Download Kaggle's Tweets Dataset](https://github.com/rigerta/rigerta.github.io/tree/dev/images/undraw_download.png "Download Kaggle's Tweets Dataset")
+![Download Kaggle's Tweets Dataset](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/undraw_download.png "Download Kaggle's Tweets Dataset")
 </div>
 
 <h3> Step 2: Load the data into the database using the <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15" target="_blank">BULK INSERT</a> command </h3> 
@@ -101,7 +101,7 @@ Let's first see how many tweets we have in the dataset and how does the data in 
 
 We have *27.481* tweets in total, we have the full tweet in the `text` column and the `selected_text` seems to be a subset of the tweet itself - at least at first sight.
 
-![Ininital checks](https://github.com/rigerta/rigerta.github.io/tree/dev/images/initial_check.png "Initial Results!")
+![Ininital checks](https://graw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/initial_check.png "Initial Results!")
 
 We also see that our columns are all text columns (type `nvarchar`) and they are all `nullable`, which means we _might_ have null values in any of those columns. 
 
@@ -111,14 +111,14 @@ Let's see if we do have any:
 
 It turns out we only have one row with missing tweet_text and selected_text which is classified as a neutral tweet. 
 
-![Missing values](https://github.com/rigerta/rigerta.github.io/tree/dev/images/04.png "Missing values!")
+![Missing values](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/04.png "Missing values!")
 
 
 Let's do some further checks, as to find out what are the distinct values for our sentiment column accross the whole dataset and check how many tweets we have per sentiment,
 using the following two queries: 
 
 <script src="https://gist.github.com/rigerta/1a22477cfa9dead1bdc4049ea717d6ce.js"></script>
-![Further checks](https://github.com/rigerta/rigerta.github.io/tree/dev/images/further_checks.png "Further checks!")
+![Further checks](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/further_checks.png "Further checks!")
 
 So we have three distinct values for the sentiment column and luckily, no tweets that have a missing value for it.
 
@@ -134,7 +134,7 @@ It is very important to know what you are working with, so that you can take bet
 
 <script src="https://gist.github.com/rigerta/5479aa85a06bbffc3002a2247fb20008.js"></script>
 
-![Same selected text per tweet](https://github.com/rigerta/rigerta.github.io/tree/dev/images/05.png "Same selected text per tweet!")
+![Same selected text per tweet](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/05.png "Same selected text per tweet!")
 
 As we see, there are 303 tweets in the dataset having the same selected text - "happy" and 262 sharing the selected text "good" and so on. 
 
@@ -146,7 +146,7 @@ We can find out the shortest and longest tweet lenth using the following query:
 
 And we find out that our tweets range from 3 characters long to 159 characters long. 
 
-![MinMax Length](https://github.com/rigerta/rigerta.github.io/tree/dev/images/06.png "MinMax Tweet Length!")
+![MinMax Length](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/06.png "MinMax Tweet Length!")
 
 
 That means that finding the distribution of tweet length per sentiment, we could come up with groups like: 
@@ -162,7 +162,7 @@ We can use the following query and find out how long are most of the tweets per 
 
 The results seem interesting: 
 
-![Tweet Length Distribution Per Sentiment](https://github.com/rigerta/rigerta.github.io/tree/dev/images/07.png "Tweet Length Distribution Per Sentiment!")
+![Tweet Length Distribution Per Sentiment](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/07.png "Tweet Length Distribution Per Sentiment!")
 
   Most of the positive and negative tweets are between 50-100 characters long  
 
@@ -178,7 +178,7 @@ The query is the same, just this time we query on the selected_text instead of t
 
 > For every sentiment, whether negative, positive or neutral, the majority of the selected texts are between 0-50 characters long.
 
-![Selected Text Length Distribution Per Sentiment](https://github.com/rigerta/rigerta.github.io/tree/dev/images/08.png "Selected Text Length Distribution Per Sentiment!")
+![Selected Text Length Distribution Per Sentiment](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/08.png "Selected Text Length Distribution Per Sentiment!")
 
 
 ## A quick recap:
@@ -205,7 +205,7 @@ Most of the selected texts (regardless of the sentiment) are less than 50 charac
 
 Further - slightly more advanced - exploratory steps could include trying to find out how many words there are per tweet, the average word length, the word distribution and the number of unique words.
 
-This can be done using T-SQL and the [STRING_SPLIT()](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql?view=sql-server-ver15) function (available as of SQL Server 2016, Compatibility Level 130). 
+This can be done using the [STRING_SPLIT()](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql?view=sql-server-ver15) function (available as of SQL Server 2016, Compatibility Level 130). 
 
 
 <br/>       
@@ -234,7 +234,7 @@ _A big shout out to the developers and designers, they are doing a great job!_
 
 
 <div class = "center" markdown="1">
-![Super Thank You!](https://github.com/rigerta/rigerta.github.io/tree/dev/images/happy.png "Super Thank You!")
+![Super Thank You!](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/happy.png "Super Thank You!")
 </div>
 
 
