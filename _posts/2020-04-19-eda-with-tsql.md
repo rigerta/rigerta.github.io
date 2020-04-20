@@ -161,15 +161,15 @@ The results seem interesting:
 
 ![Tweet Length Distribution Per Sentiment](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/07.PNG "Tweet Length Distribution Per Sentiment!")
 
-  Most of the positive and negative tweets are between 50-100 characters long  
+  * Most of the positive and negative tweets are between 50-100 characters long.
 
-  Most of the neutral tweets are shorter - between 5-50 characters
+  * Most of the neutral tweets are shorter - between 5-50 characters.
 
-  There's a single tweet longer than 150 characters and that it is a neutral one.
+  * There's a single tweet longer than 150 characters and that it is a neutral one.
 
 
-We can perform the same analysis on the selected_text and see what we find. 
-The query is the same, just this time we query on the selected_text instead of the tweet text. 
+We can perform the same analysis on the `selected_text` and see what we find. 
+The query is the same, just this time we query on the `selected_text` instead of the tweet `text`. 
 
 <script src="https://gist.github.com/rigerta/6337131100317386100b7b00015d38d1.js"></script>
 
