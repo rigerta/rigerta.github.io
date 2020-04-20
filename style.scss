@@ -149,6 +149,19 @@ img {
     width: 100%;
   }
 
+div.centered_p {
+    height: 5em;
+    position: relative }
+div.centered_p p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+  }
+
+
 .date {
   font-style: italic;
   color: $gray;

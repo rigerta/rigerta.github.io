@@ -8,19 +8,26 @@ Welcome to my very first blog post!
 
 
 This is going to be a blog on the things that I am curious and passionate about. 
-The main goal is for it to be a technical one, focused on the things I either already know and would like to document somewhere, or new things I am learning at the moment. 
 
-I've recently become very interested in Machine and Deep Learning and as you quickly learn, once into the topic, the first step in solving any kind of problem is analysing the data you have to work with and getting familiar with it. And by that I mean REALLY familiar. 
+The main goal is for it to be a technical one, focused on the things I either already know and would like to document somewhere, or new things I am learning at the moment.
+
+_Alternatively, I can write on my sucessful and failed (?) attempts at following baking recipes, but that's only my back up plan, in case I am *that* bad at blogging on technical stuff. I figured it is a solid back up plan, don't you agree?_
+
+
+I've recently become very interested in Machine and Deep Learning and as you quickly learn, once into the topic, the first step in solving any kind of problem is analysing the data you have to work with and getting familiar with it. And by that I mean _really_ familiar. 
 
 You need to know exactly what are you working on and how the data looks like and what is missing and why is it missing and what can you replace it with and oh-so-many things to worry about. 
 
-But first, let's get some insights from our dataset. Basic ones. Easy small-talk with the data.
+But first, let's get some insights from our dataset. Basic ones. Easy small-talk with the data. More like a one-sided small talk, since you ask and the data answers. 
+It does not ask you back. 
 
-This is the point of my exercise: I'd like to be able to have a nice small talk with the data, get some basic info and move on with my life. 
-You know, especially now that there are no friends around, my hobby is talking to data. ~~Things are getting weird, belive me, I know!~~ 
+_Quite boring, you might think. But not really!_
+
+This is exactly the point of my exercise: I'd like to be able to have a nice small-talk with the data, get some basic info and move on with my life. 
+You know, especially now that there are no friends around, my hobby is talking to data. ~~Things are getting weird. Belive me, I am aware of it!~~ 
 
 Anyway, if you have never been good in small talk, this is your chance to practice, because this is the only way to be able to develop an intuition about your data. 
-Or have any friends in real life, for that matter. Just look at how nice this has worked out for me. 
+Or have any friends in real life, for that matter. _Just look at how nice this has worked out for me._
 
 So, back to the subject: 
 
@@ -29,21 +36,26 @@ The most commonly used languages for exploratory data analysis seem to be R and 
 According to Google:  
 
 >
-Exploratory Data Analysis In Python Vs R. Python and R programming are the two most widely used languages for data analysis by data scientists.
+Exploratory Data Analysis In Python Vs R. 
+Python and R programming are the two most widely used languages for data analysis by data scientists.
 Nov 5, 2019
 
 
 I personally have chosen to learn Python, however I decided to first perform this task in T-SQL, since this is part of my comfort zone. 
-The learning-new-things steps will come later. One has to start somewhere, right?
+The learning-new-things steps will come a tiny bit later. One has to start somewhere, right?
+
 
 Also, I have noticed there are people interested in doing this kind of analysis in T-SQL. 
-How do I know this? Glad you asked. Going back to Google, searching for ["exploratory data analysis with t-sql"](https://www.google.com/search?client=firefox-b-d&ei=yaecXtK3Eueo1fAP9aWakAo&q=exploratory+data+analysis+with+t-sql&oq=exploratory+data+analysis+with+t-sql&gs_lcp=CgZwc3ktYWIQAzoECAAQRzoECCEQClCdpAtYtKwLYLytC2gAcAp4AIABWogBmAOSAQE1mAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiSwN35nfXoAhVnVBUIHfWSBqIQ4dUDCAs&uact=5) there are more than 2 million results - which means, _some_ people are still interested to know.
+How do I know this? Glad you asked. Going back to Google, searching for ["exploratory data analysis with t-sql"](https://www.google.com/search?client=firefox-b-d&ei=yaecXtK3Eueo1fAP9aWakAo&q=exploratory+data+analysis+with+t-sql&oq=exploratory+data+analysis+with+t-sql&gs_lcp=CgZwc3ktYWIQAzoECAAQRzoECCEQClCdpAtYtKwLYLytC2gAcAp4AIABWogBmAOSAQE1mAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiSwN35nfXoAhVnVBUIHfWSBqIQ4dUDCAs&uact=5) there are more than 2 million results - which means, _some_ people are still interested to read about this.
 
-Now, T-SQL is not a language _designed_ for this, but the kind of analysis on the dataset of my choice can be easily done in T-SQL as well, so I thought of giving this a try and then proceeding with other language/s. 
+Yes - it also means _there are already more than 2 million results on the subject, why are you adding another one, Rigerta?_ but please let's not go there, because honestly, I am also somewhat still wondering. 
 
-Please keep in mind that what I am trying to do is _basic_ exploratory data analysis, to gain some insights from the dataset I am working with. 
+However, articles like [Writing a Technical Blog: Why to do it and what to write about](https://littlekendra.com/2011/01/13/onblogging/) from Kendra Little ([t](https://twitter.com/Kendra_Little), [b](https://littlekendra.com/)) and [this](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045) by Rachel Thomas ([t](https://twitter.com/math_rachel)) and [this one]() made me think I could and maybe _should_ just do it. So here we are.   
 
-This will be the first article in a series of 3, since I plan to do the same in Python with Pandas and in PySpark with SparkSQL - because..well, it's quarantine time and I cannot use my usual excuse to procrastinate: "I don't have time, I will do it later". Later apparently caught up with me and it is standing right here, looking over my shoulder. So yes. We are doing this! 
+Now, coming back to the main subject, T-SQL is not a language _designed_ for exploratory data analysis, but the kind of analysis I have in mind can be easily done in T-SQL as well, so I thought of giving this a try and then proceeding with other language/s. 
+
+
+This will be the first article in a series of 3, since I plan to do the same in Python with Pandas and in PySpark with SparkSQL - because...well, it's quarantine time and I cannot use my usual excuses to procrastinate. 
  
 
 <h3> Alright, let's jump right into it. </h3>
@@ -76,7 +88,7 @@ The objective in this competition is to develop a model that performs sentiment 
 
 <div class = "center" markdown="1">
 
-![Start Analysing](http://127.0.0.1:8887/search.png "Start analysing!")
+![Start Analysing](http://127.0.0.1:8887/visual_data.png "Start analysing!")
 
 </div>
 
@@ -87,11 +99,11 @@ Let's first see how many tweets we have in the dataset and how does the data in 
 
 <script src="https://gist.github.com/rigerta/f29b0033d8c02093b2eb653918332c0f.js"></script>
 
-We have 27.481 tweets in total, we have the complete tweet in the tweet_text column and the selected_text seems to be a subset of the tweet itself - at first sight.
+We have *27.481* tweets in total, we have the full tweet in the `text` column and the `selected_text` seems to be a subset of the tweet itself - at least at first sight.
 
 ![Ininital checks](http://127.0.0.1:8887/initial_check.png "Initial Results!")
 
-We also see that our columns are all text columns (type `nvarchar`) and they are all `nullable`, which means we might have null values in any of those columns. 
+We also see that our columns are all text columns (type `nvarchar`) and they are all `nullable`, which means we _might_ have null values in any of those columns. 
 
 Let's see if we do have any: 
 
@@ -128,14 +140,13 @@ As we see, there are 303 tweets in the dataset having the same selected text - "
 
 Next step is finding out what is the distribution of length of tweets per sentiment. 
 
-We can find out how long our tweets are, at least min and max lengths by using the following query: 
+We can find out the shortest and longest tweet lenth using the following query: 
 
 <script src="https://gist.github.com/rigerta/d83f976d4d43622405369dfed18af7d0.js"></script>
 
 And we find out that our tweets range from 3 characters long to 159 characters long. 
 
 ![MinMax Length](http://127.0.0.1:8887/06.png "MinMax Tweet Length!")
-
 
 
 That means that finding the distribution of tweet length per sentiment, we could come up with groups like: 
@@ -192,10 +203,22 @@ Most of the neutral tweets are less than 50 chars long
 Most of the selected texts (regardless of the sentiment) are less than 50 characters long
  
 
+Further - slightly more advanced - exploratory steps could include trying to find out how many words there are per tweet, the average word length, the word distribution and the number of unique words.
+
+This can be done using T-SQL and the [STRING_SPLIT()](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql?view=sql-server-ver15) function (available as of SQL Server 2016, Compatibility Level 130). 
+
+
+<br/>       
+
+<div class="centered_p">
+  <p> ******* </p>
+</div>
 
 We have performed a basic exploratory data analysis on the tweets dataset and now we are ready for the next steps, which would be post-processing and building a machine learning model to fit our training set and accurately classify the test set tweets selected text sentiment! 
 
-If you decide to give this competition a try on Kaggle, have fun and good luck! 
+
+If by any chance you decide to give this competition a try on Kaggle, have fun and good luck! 
+
 
 I will meanwhile perform the same analysis on the same dataset on Python as well, so if you're interested, keep an eye for the next post in this series.
 
