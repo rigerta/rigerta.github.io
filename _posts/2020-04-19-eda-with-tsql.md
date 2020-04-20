@@ -77,7 +77,7 @@ The objective in this competition is to develop a model that performs sentiment 
 <h3> Step 1. Download the train.csv dataset file from <a href="https://www.kaggle.com/c/tweet-sentiment-extraction/data" target="_blank">Kaggle</a> </h3> 
 
 <div class = "center" markdown="1">
-![Download Kaggle's Tweets Dataset](http://127.0.0.1:8887/undraw_download.png "Download Kaggle's Tweets Dataset")
+![Download Kaggle's Tweets Dataset](https://github.com/rigerta/rigerta.github.io/tree/dev/images/undraw_download.png "Download Kaggle's Tweets Dataset")
 </div>
 
 <h3> Step 2: Load the data into the database using the <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15" target="_blank">BULK INSERT</a> command </h3> 
@@ -88,7 +88,7 @@ The objective in this competition is to develop a model that performs sentiment 
 
 <div class = "center" markdown="1">
 
-![Start Analysing](http://127.0.0.1:8887/visual_data.png "Start analysing!")
+![Start Analysing](https://github.com/rigerta/rigerta.github.io/tree/dev/images/visual_data.png "Start analysing!")
 
 </div>
 
@@ -101,7 +101,7 @@ Let's first see how many tweets we have in the dataset and how does the data in 
 
 We have *27.481* tweets in total, we have the full tweet in the `text` column and the `selected_text` seems to be a subset of the tweet itself - at least at first sight.
 
-![Ininital checks](http://127.0.0.1:8887/initial_check.png "Initial Results!")
+![Ininital checks](https://github.com/rigerta/rigerta.github.io/tree/dev/images/initial_check.png "Initial Results!")
 
 We also see that our columns are all text columns (type `nvarchar`) and they are all `nullable`, which means we _might_ have null values in any of those columns. 
 
@@ -111,14 +111,14 @@ Let's see if we do have any:
 
 It turns out we only have one row with missing tweet_text and selected_text which is classified as a neutral tweet. 
 
-![Missing values](http://127.0.0.1:8887/04.png "Missing values!")
+![Missing values](https://github.com/rigerta/rigerta.github.io/tree/dev/images/04.png "Missing values!")
 
 
 Let's do some further checks, as to find out what are the distinct values for our sentiment column accross the whole dataset and check how many tweets we have per sentiment,
 using the following two queries: 
 
 <script src="https://gist.github.com/rigerta/1a22477cfa9dead1bdc4049ea717d6ce.js"></script>
-![Further checks](http://127.0.0.1:8887/further_checks.png "Further checks!")
+![Further checks](https://github.com/rigerta/rigerta.github.io/tree/dev/images/further_checks.png "Further checks!")
 
 So we have three distinct values for the sentiment column and luckily, no tweets that have a missing value for it.
 
@@ -134,7 +134,7 @@ It is very important to know what you are working with, so that you can take bet
 
 <script src="https://gist.github.com/rigerta/5479aa85a06bbffc3002a2247fb20008.js"></script>
 
-![Same selected text per tweet](http://127.0.0.1:8887/05.png "Same selected text per tweet!")
+![Same selected text per tweet](https://github.com/rigerta/rigerta.github.io/tree/dev/images/05.png "Same selected text per tweet!")
 
 As we see, there are 303 tweets in the dataset having the same selected text - "happy" and 262 sharing the selected text "good" and so on. 
 
@@ -146,7 +146,7 @@ We can find out the shortest and longest tweet lenth using the following query:
 
 And we find out that our tweets range from 3 characters long to 159 characters long. 
 
-![MinMax Length](http://127.0.0.1:8887/06.png "MinMax Tweet Length!")
+![MinMax Length](https://github.com/rigerta/rigerta.github.io/tree/dev/images/06.png "MinMax Tweet Length!")
 
 
 That means that finding the distribution of tweet length per sentiment, we could come up with groups like: 
@@ -162,7 +162,7 @@ We can use the following query and find out how long are most of the tweets per 
 
 The results seem interesting: 
 
-![Tweet Length Distribution Per Sentiment](http://127.0.0.1:8887/07.png "Tweet Length Distribution Per Sentiment!")
+![Tweet Length Distribution Per Sentiment](https://github.com/rigerta/rigerta.github.io/tree/dev/images/07.png "Tweet Length Distribution Per Sentiment!")
 
   Most of the positive and negative tweets are between 50-100 characters long  
 
@@ -178,7 +178,7 @@ The query is the same, just this time we query on the selected_text instead of t
 
 > For every sentiment, whether negative, positive or neutral, the majority of the selected texts are between 0-50 characters long.
 
-![Selected Text Length Distribution Per Sentiment](http://127.0.0.1:8887/08.png "Selected Text Length Distribution Per Sentiment!")
+![Selected Text Length Distribution Per Sentiment](https://github.com/rigerta/rigerta.github.io/tree/dev/images/08.png "Selected Text Length Distribution Per Sentiment!")
 
 
 ## A quick recap:
@@ -234,7 +234,7 @@ _A big shout out to the developers and designers, they are doing a great job!_
 
 
 <div class = "center" markdown="1">
-![Super Thank You!](http://127.0.0.1:8887/happy.png "Super Thank You!")
+![Super Thank You!](https://github.com/rigerta/rigerta.github.io/tree/dev/images/happy.png "Super Thank You!")
 </div>
 
 
