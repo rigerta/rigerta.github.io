@@ -76,9 +76,9 @@ The objective in this competition is to develop a model that performs sentiment 
  
 <h3> Step 1. Download the train.csv dataset file from <a href="https://www.kaggle.com/c/tweet-sentiment-extraction/data" target="_blank">Kaggle</a> </h3> 
 
-<div class = "center" markdown="1">
+ 
 ![Download Kaggle's Tweets Dataset](https://raw.githubusercontent.com/rigerta/rigerta.github.io/dev/images/undraw_download.png "Download Kaggle's Tweets Dataset")
-</div>
+ 
 
 <h3> Step 2: Load the data into the database using the <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15" target="_blank">BULK INSERT</a> command </h3> 
 
